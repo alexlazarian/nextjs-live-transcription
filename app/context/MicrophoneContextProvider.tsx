@@ -37,7 +37,7 @@ export enum MicrophoneState {
 }
 
 const MicrophoneContext = createContext<MicrophoneContextType | undefined>(
-  undefined
+  undefined,
 );
 
 interface MicrophoneContextProviderProps {
@@ -48,7 +48,7 @@ const MicrophoneContextProvider: React.FC<MicrophoneContextProviderProps> = ({
   children,
 }) => {
   const [microphoneState, setMicrophoneState] = useState<MicrophoneState>(
-    MicrophoneState.NotSetup
+    MicrophoneState.NotSetup,
   );
   const [microphone, setMicrophone] = useState<MediaRecorder | null>(null);
 
@@ -115,7 +115,7 @@ function useMicrophone(): MicrophoneContextType {
 
   if (context === undefined) {
     throw new Error(
-      "useMicrophone must be used within a MicrophoneContextProvider"
+      "useMicrophone must be used within a MicrophoneContextProvider",
     );
   }
 

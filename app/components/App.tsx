@@ -16,7 +16,7 @@ import Visualizer from "./Visualizer";
 
 const App: () => JSX.Element = () => {
   const [caption, setCaption] = useState<string | undefined>(
-    "Powered by Deepgram"
+    "Powered by Deepgram",
   );
   const { connection, connectToDeepgram, connectionState } = useDeepgram();
   const { setupMicrophone, microphone, startMicrophone, microphoneState } =
@@ -48,7 +48,7 @@ const App: () => JSX.Element = () => {
 
     const onData = (e: BlobEvent) => {
       // iOS SAFARI FIX:
-      // Prevent packetZero from being sent. If sent at size 0, the connection will close. 
+      // Prevent packetZero from being sent. If sent at size 0, the connection will close.
       if (e.data.size > 0) {
         connection?.send(e.data);
       }

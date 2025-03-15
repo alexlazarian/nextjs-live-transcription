@@ -42,7 +42,7 @@ export default function RootLayout({
       <body
         className={`h-full dark ${classNames(
           favorit.variable,
-          inter.className
+          inter.className,
         )}`}
       >
         <MicrophoneContextProvider>
